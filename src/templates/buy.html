@@ -1,101 +1,54 @@
+<style>
+  body {background-color: rgb(231, 231, 231)};
+</style>
+<div class="checkout-tag-container">
+  <h3 class="text-center checkout-tag">Checkout</h3>
+</div>
 <div class="container">
-  <h2 class="text-center">Amount: $9.95/month</h2>
-  <div class="col-sm-6 col-sm-offset-3 register">
-    <form id="payment-form" action="" method="POST" ng-submit="stripeToken()" class="form-horizontal">
+  <div class="row">
+    <form id="payment-form" action="" method="POST" ng-submit="stripeToken()" class="col s12 register z-depth-2">
       <span class="payment-errors"></span>
 
-      <div class="form-group row">
-        <div class="col-md-6">
-          <label>
-            <span>Email :</span>
-          </label>
+      <div class="row">
+        <div class="col m6 s12 input-field">
+          <input id="email" type="email" class="validate" ng-model="user.email" />
+          <label for="email">Email</label>
         </div>
-        <div class="col-md-6">
-          <input type="email" class="form-control" ng-model="user.email" />
+
+        <div class="col m6 s12 input-field">
+          <input type="text" ng-model="user.searchTerm" />
+          <label for="search_term">Search Term</label>
         </div>
       </div>
 
-      <div class="form-group row">
-        <div class="col-md-6">
-          <label>
-            <span>Search Term :</span>
-          </label>
+      <div class="row">
+        <div class="col m12 input-field">
+          <input type="text" size="7" data-stripe="number" class="form-control" />
+          <label for="card">Card Number</label>
         </div>
-        <div class="col-md-6">
-          <input type="text" class="form-control" ng-model="user.searchTerm" />
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-md-6">
-          <label>
-            <span>Card Number :</span>
-          </label>
-        </div>
-        <div class="col-md-6">
-          <input type="text" size="7" data-stripe="number" class="form-control" style="float: right;" />
-        </div>
-      </div>
-
-      <div class="form-group row">
-        <div class="col-md-6">
-          <label>
-            <span>CVC :</span>
-          </label>
-        </div>
-        <div class="CVC col-md-6">
+        <div class="CVC col m4 input-field">
           <input type="text" size="1" data-stripe="cvc" class="form-control" />
+          <label for="cvc">CVC</label>
         </div>
-        <div class="date row">
-          <div class="col-md-6">
-            <label>
-              <span>Expiration :</span>
-            </label>
-          </div>
-          <div class="col-md-6">
-            <select name='expireMM' data-stripe="exp-month" id='expireMM'>
-              <option value=''>Month</option>
-              <option value='01'>1</option>
-              <option value='02'>2</option>
-              <option value='03'>3</option>
-              <option value='04'>4</option>
-              <option value='05'>5</option>
-              <option value='06'>6</option>
-              <option value='07'>7</option>
-              <option value='08'>8</option>
-              <option value='09'>9</option>
-              <option value='10'>10</option>
-              <option value='11'>11</option>
-              <option value='12'>12</option>
-            </select>
-            <select name='expireYY' data-stripe="exp-year" id='expireYY'>
-              <option value=''>Year</option>
-              <option value='15'>15</option>
-              <option value='16'>16</option>
-              <option value='17'>17</option>
-              <option value='18'>18</option>
-              <option value='19'>19</option>
-              <option value='20'>20</option>
-              <option value='21'>21</option>
-              <option value='22'>22</option>
-            </select>
+        <div class="date">
+            <div class="col m4 input-field">
+              <input type="text" name='expireMM' data-stripe="exp-month" id='expireMM' maxlength="2">
+              <label for="expireMM">Month (MM)</label>
+            </div>
+            <div class="col m4 input-field">
+              <input type="text" name='expireYY' data-stripe="exp-year" id='expireYY' maxlength="2"/>
+              <label for="expireYY">Year (YY)</label>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="form-group">
-      </div>
 
       <hr class="ng-scope">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col m4">
+          <span>Amount: $9.95</span>
+        </div>
+        <div class="col offset-m4 m4 right-align">
           <button type="submit" class="btn">Submit Payment</button>
-        </div>
-        <div class="col-md-4">
-          <label>Amount:</label>
-        </div>
-        <div class="col-md-4">
-          <span>$9.95</span>
         </div>
       </div>
     </form>

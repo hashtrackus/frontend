@@ -1,6 +1,9 @@
 (function() {
   angular.module('hashtrax.controllers.buy', [])
   .controller('BuyCtrl', function($scope, $http) {
+    $(document).ready(function() {
+        $('select').material_select();
+    });
     $scope.test = 'Test string';
 
     function stripeResponseHandler(status, response) {
@@ -13,7 +16,7 @@
           .success(function() {
             console.log(user);
           })
-          .catch(function(err) { 
+          .catch(function(err) {
             console.log(err);
           })
       }

@@ -1,8 +1,10 @@
 body {
-  background-color: rgb(50, 50, 50) !important;
+  background-color: rgb(50, 50, 50);
   color: #F2F0F0;
 }
-
+.caret {
+  color: #9E9E9E !important;
+}
 .slide h1 {
   color: white;
   font-size: 6em;
@@ -209,14 +211,26 @@ label {
 #d3 {
   margin-left: 216px;
 }
-
 .register{
-  background-color: #3D2945;
-  padding: 80px;
+  background-color: #2072B3;
+  margin-top: 10%;
+  border-radius: 7px;
+}
+.checkout-tag-container {
+  background: linear-gradient(#5996C7, #2072b3);
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.checkout-tag {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 1%;
 }
 .form-control{
   border-radius: 0px;
 }
-
+.amount-head {
+  color: rgb(50, 50, 50);
+}
 
 // login/register
