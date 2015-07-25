@@ -2,7 +2,7 @@
   "name": "hashtrax",
   "version": "0.0.0",
   "scripts": {
-    "start": "node app.js",
+    "start": "gulp server",
     "postinstall": "./node_modules/.bin/bower install && ./node_modules/.bin/gulp build"
   },
   "dependencies": {

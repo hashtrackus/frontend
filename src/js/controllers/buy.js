@@ -12,7 +12,7 @@
         var user = $scope.user
         user.token = response.id;
 
-        $http.post("http://hashtraxserver.herokuapp.com/theMoney", user)
+        $http.post("http://api.hashtrack.us/theMoney", user)
           .success(function() {
             console.log(user);
           })
